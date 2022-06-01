@@ -15,8 +15,8 @@ module.exports = {
   theme: {
     extend: {
         screens: {
-            'md': '990px',
-            'lg': '1140px',
+            'md': '830px',
+            'lg': '1200px',
         },
         fontFamily: {
             cabin: ["Cabin", "sans-serif"],

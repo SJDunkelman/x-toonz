@@ -38,23 +38,40 @@ function IndexPage(){
     return (
     <Layout>
     {/* Hero Section */}
-    <Section className="h-[115vh] bg-sky-top bg-cover bg-no-repeat relative">
+    <Section className="min-h-screen h-full lg:h-[115vh] bg-sky-top bg-cover bg-no-repeat relative">
         <NavigationBar />
-        <div className="absolute top-[60vh] left-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
-            <StaticImage src="../images/red-circles.png" alt="Red circle background" width="580" />
-        </div>
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 lg:hidden w-4/5">
-            <StaticImage src="../images/red-circles-with-sign.png" alt="Red circle background" className="object-cover" />
-        </div>
-        <div className="absolute top-[60vh] left-1/2 -translate-x-1/2 -translate-y-[40%]">
-            <div className="flex items-center justify-center -translate-y-[20px]">
-                <img src={NeonSign} alt="Neon sign for X-Toonz club" width="280" className="neon-sign hidden lg:block" />
+        {/* Desktop version */}
+        <div className="hidden lg:block">
+            <div className="absolute top-[60vh] left-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
+                <StaticImage src="../images/red-circles.png" alt="Red circle background" width="600" />
             </div>
-            <h2 className="text-2xl text-center text-white font-caslon">Decentralisation Together.</h2>
+            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 lg:hidden w-4/5">
+                <StaticImage src="../images/red-circles-with-sign.png" alt="Red circle background" className="object-cover" />
+            </div>
+            <div className="absolute top-[60vh] left-1/2 -translate-x-1/2 -translate-y-[40%]">
+                <div className="flex items-center justify-center -translate-y-[20px]">
+                    <img src={NeonSign} alt="Neon sign for X-Toonz club" width="280" className="neon-sign hidden lg:block" />
+                </div>
+                <h2 className="text-2xl text-center text-white font-caslon">Decentralised Together.</h2>
+            </div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/4 text-white text-3xl">
+                <p className="font-caslon">The luxuries of an exclusive private club.<br/>
+                    The inclusivity of Web3.</p>
+            </div>
         </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl">
-            <p className="font-caslon">The luxuries of an exclusive private club.<br/>
-                The inclusivity of Web3.</p>
+
+        {/* Mobile Version */}
+        <div className="flex lg:hidden flex-col justify-center items-center text-white h-full md:h-2/5 mt-6">
+            <div className="mb-20">
+                <div className="w-full">
+                    <StaticImage src="../images/red-circles-with-sign.png" alt="Red circle background" className="object-cover z-0" />
+                </div>
+                <h2 className="text-3xl text-center text-white font-caslon">Decentralisation Together.</h2>
+            </div>
+            <div className="text-white text-3xl">
+                <p className="font-caslon">The luxuries of an exclusive private club.<br/>
+                    The inclusivity of Web3.</p>
+            </div>
         </div>
     </Section>
 
@@ -69,13 +86,23 @@ function IndexPage(){
                 <StaticImage src="../images/pieces/rick-and-morty.jpeg" alt="X-Toonz Rick & Morty" className="h-48 w-48 rounded-lg" />
                 <div className="flex flex-col justify-start items-center text-white">
                     <h3 className="text-2xl font-inter">Diamond Tier</h3>
-                    <p className="text-lg">Description of tier & benefits</p>
+                    <p className="text-lg">VIP status access to the Social Club with exclusive perks</p>
+                    <ul>
+                        <li>Premium Suites All meals & drinks comped</li>
+                        <li>Free Airport Shuttle</li>
+                        <li>Eligible to stake $TIME</li>
+                    </ul>
                 </div>
             </div>
             <div className="flex space-x-8">
                 <div className="flex flex-col justify-start items-center text-white">
                     <h3 className="text-2xl font-inter">Silver Tier</h3>
-                    <p className="text-lg">Description of tier & benefits</p>
+                    <p className="text-lg">Instant access to the Social Club</p>
+                    <ul>
+                        <li>Access to all conferences and events held at Social Club</li>
+                        <li>Invite to P2E Academy Passive Income</li>
+                        <li>First in line to all physical/digital collaborations</li>
+                    </ul>
                 </div>
                 <StaticImage src="../images/pieces/silver.jpeg" alt="X-Toonz Rick & Morty" className="h-48 w-48 rounded-lg" />
             </div>
@@ -83,6 +110,8 @@ function IndexPage(){
         </Section>
         <div className="h-20 bg-gradient-to-b from-[#1c49a6] to-[#163583]" />
     </div>
+
+    {/* Rarity */}
     <div id="rarity">
         <Section className="h-full md:h-screen flex flex-col items-center space-y-6 bg-sky-middle-short bg-cover bg-no-repeat text-center py-8">
             <h2 className="text-5xl text-white pb-4 font-inter">Rarity</h2>
@@ -90,17 +119,21 @@ function IndexPage(){
             <RarityGrid />
         </Section>
     </div>
+
+    {/* Roadmap */}
     <div id="roadmap" className="relative">
         <StaticImage src="../images/roadmap/overlay-roadmap.png" alt="X-Toonz roadmap" className="object-cover" />
         <Link to="/roadmap">
             <div className="absolute bottom-0 mb-12 left-1/2 -translate-x-1/2 px-4 py-2 bg-white rounded-full shadow-container text-dark-violet hover:text-white hover:bg-gradient-to-r hover:from-blue hover:to-pink">Expand Full Roadmap</div>
         </Link>
     </div>
+
+    {/* FAQ */}
     <div className="bg-gradient-to-b from-darker-blue to-dark-violet">
         <div id="faq">
             <Section className="flex flex-col items-center pt-10">
                 <h2 className="text-5xl text-white pb-4 font-inter">FAQ</h2>
-                <div className="flex flex-col w-3/5 bg-light-violet rounded-lg py-6">
+                <div className="flex flex-col w-full lg:w-3/5 bg-light-violet rounded-lg py-6">
                     {frequentQuestions.map((pair, i, row) => {
                         if (i + 1 !== row.length){
                             return(
@@ -119,26 +152,14 @@ function IndexPage(){
                 </div>
             </Section>
         </div>
+
+        {/* Team */}
         <div id="team">
             <Section className="flex flex-col items-center pt-10">
                 <h2 className="text-5xl text-white pb-4 font-inter">Team</h2>
                 <p className="text-white italic">Hover to reveal <i className="fa-solid fa-glasses"/></p>
-                <div className="flex flex-wrap py-8 w-4/5">
-                    <div className="flex flex-col pb-8 md:pb-0 w-full md:w-1/3 items-center text-white group">
-                        <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
-                        <StaticImage src="../images/profiles/simon.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
-                        <h4 className="text-3xl">Simon Dunkelman</h4>
-                        <p className="text-xl italic pb-2">Product Lead</p>
-                        <div className="flex space-x-4 text-3xl">
-                            <a href="https://twitter.com/flatpackfintech" target="_blank"><i className="fa-brands fa-twitter" /></a>
-                            <a href="https://www.linkedin.com/in/simondunkelman/" target="_blank"><i className="fa-brands fa-linkedin" /></a>
-                        </div>
-                        <ul className="list-disc ml-6">
-                            <li>Financial Engineering & Risk Management MSc, Imperial College London</li>
-                            <li>Previously SaaS founder in Wealth Management</li>
-                        </ul>
-                    </div>
-                    <div className="flex flex-col pb-8 md:pb-0 w-full md:w-1/3 items-center text-white group">
+                <div className="flex flex-wrap py-8 md:w-1/2 lg:w-4/5">
+                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group">
                         <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
                         <StaticImage src="../images/profiles/sam.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
                         <h4 className="text-3xl">Sam Parsons</h4>
@@ -152,7 +173,21 @@ function IndexPage(){
                             <li>Worked on finance team for largest deal on record at the time $5.45 billion sale of Stuyvesant Town - Peter Cooper Village to BlackRock</li>
                         </ul>
                     </div>
-                    <div className="flex flex-col pb-8 md:pb-0 w-full md:w-1/3 items-center text-white group">
+                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group">
+                        <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
+                        <StaticImage src="../images/profiles/simon.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
+                        <h4 className="text-3xl">Simon Dunkelman</h4>
+                        <p className="text-xl italic pb-2">Product Lead</p>
+                        <div className="flex space-x-4 text-3xl">
+                            <a href="https://twitter.com/flatpackfintech" target="_blank"><i className="fa-brands fa-twitter" /></a>
+                            <a href="https://www.linkedin.com/in/simondunkelman/" target="_blank"><i className="fa-brands fa-linkedin" /></a>
+                        </div>
+                        <ul className="list-disc ml-6">
+                            <li>Financial Engineering & Risk Management MSc, Imperial College London</li>
+                            <li>Previously SaaS founder in Wealth Management</li>
+                        </ul>
+                    </div>
+                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group">
                         <StaticImage src="../images/pieces/naruto.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
                         <StaticImage src="../images/profiles/edril.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
                         <h4 className="text-3xl">Edril Salanza</h4>
