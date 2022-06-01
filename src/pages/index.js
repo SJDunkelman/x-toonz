@@ -129,7 +129,7 @@ function IndexPage(){
     <div id="rarity">
         <Section className="h-full md:h-screen flex flex-col items-center space-y-6 bg-sky-middle-short bg-cover bg-no-repeat text-center py-8">
             <h2 className="text-5xl text-white pb-4 font-inter">Rarity</h2>
-            <p className="text-lg text-white">8,888 unique generated from <span className="font-bold">336</span> across <span className="font-bold">7</span> different layers.</p>
+            <p className="text-lg text-white"><span className="font-bold">8,888</span> unique NFTs generated from <span className="font-bold">336</span> traits across <span className="font-bold">7</span> different layers.</p>
             <RarityGrid />
         </Section>
     </div>
@@ -171,8 +171,8 @@ function IndexPage(){
         <div id="team">
             <Section className="flex flex-col items-center pt-10">
                 <h2 className="text-5xl text-white pb-4 font-inter">Team</h2>
-                <p className="text-white italic hidden lg:block">Hover to reveal <i className="ml-2 fa-solid fa-glasses"/></p>
-                <p className="text-white italic lg:hidden">Tap to reveal <i className="ml-2 fa-solid fa-glasses"/></p>
+                {/*<p className="text-white italic hidden lg:block">Hover to reveal <i className="ml-2 fa-solid fa-glasses"/></p>*/}
+                <p className="text-white italic">Tap to reveal <i className="ml-2 fa-solid fa-glasses"/></p>
                 <div className="flex flex-wrap py-8 md:w-1/2 lg:w-4/5">
                     <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group"  onClick={handleSamReveal}>
                         {/*<div className="hidden md:block">*/}
