@@ -51,7 +51,7 @@ export default function RarityGrid() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 justify-center">
             {traits.map(trait => (
                 <div className="">
-                    <div className={`w-3/4 md:h-48 md:w-48 rounded-lg bg-gradient-radial from-light-violet to-${trait.colour}`}>
+                    <div className={`h-48 w-48 rounded-lg bg-gradient-radial from-light-violet to-${trait.colour}`}>
                         <img src={trait.image} alt={`Trait example for ${trait.name}`} className="object-cover rounded-lg" />
                     </div>
                     <p className="text-lg text-white">{trait.name}</p>
