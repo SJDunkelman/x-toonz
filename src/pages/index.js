@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import Layout from "../components/Layout";
 import NavigationBar from "../components/NavigationBar";
 import Section from "../components/Section";
@@ -35,6 +35,22 @@ const frequentQuestions = [
 ]
 
 function IndexPage(){
+    const[samRevealed, setSamReveal] = useState(false);
+    const[simonRevealed, setSimonReveal] = useState(false);
+    const[edrilRevealed, setEdrilReveal] = useState(false);
+
+    function handleSamReveal(){
+        setSamReveal(!samRevealed);
+    }
+
+    function handleSimonReveal(){
+        setSimonReveal(!simonRevealed);
+    }
+
+    function handleEdrilReveal(){
+        setEdrilReveal(!edrilRevealed);
+    }
+
     return (
     <Layout>
     {/* Hero Section */}
@@ -80,31 +96,31 @@ function IndexPage(){
     {/* About Section */}
     <div id="about">
         <Section className="h-full pt-10 flex flex-col items-center space-y-4 bg-sky-bottom bg-cover bg-no-repeat text-center">
-            <h2 className="text-5xl font-inter text-transparent bg-clip-text bg-gradient-to-br from-pink to-light-pink">Welcome to the Club</h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-pink to-light-pink">Welcome to the Club</h2>
             <p className="text-2xl text-white">8,888 X-Toonz bringing Web3 IRL, starting in the US capital of crypto.</p>
-            <div className="flex space-x-8 py-6">
-                <StaticImage src="../images/pieces/rick-and-morty.jpeg" alt="X-Toonz Rick & Morty" className="h-48 w-48 rounded-lg" />
+            <div className="flex flex-col space-y-4 items-center md:flex-row md:space-x-8 py-6">
+                <StaticImage src="../images/pieces/rick-and-morty.jpeg" alt="X-Toonz Rick & Morty" className="w-3/4 md:h-48 md:w-48 rounded-lg" />
                 <div className="flex flex-col justify-start items-center text-white">
-                    <h3 className="text-2xl font-inter">Diamond Tier</h3>
+                    <h3 className="text-2xl font-caslon font-semibold">Diamond Tier</h3>
                     <p className="text-lg">VIP status access to the Social Club with exclusive perks</p>
-                    <ul>
+                    <ul className="text-center">
                         <li>Premium Suites All meals & drinks comped</li>
                         <li>Free Airport Shuttle</li>
                         <li>Eligible to stake $TIME</li>
                     </ul>
                 </div>
             </div>
-            <div className="flex space-x-8">
+            <div className="flex flex-col space-y-4 items-center md:flex-row md:space-x-8">
                 <div className="flex flex-col justify-start items-center text-white">
-                    <h3 className="text-2xl font-inter">Silver Tier</h3>
+                    <h3 className="text-2xl font-caslon font-semibold">Silver Tier</h3>
                     <p className="text-lg">Instant access to the Social Club</p>
-                    <ul>
+                    <ul className="text-center">
                         <li>Access to all conferences and events held at Social Club</li>
                         <li>Invite to P2E Academy Passive Income</li>
                         <li>First in line to all physical/digital collaborations</li>
                     </ul>
                 </div>
-                <StaticImage src="../images/pieces/silver.jpeg" alt="X-Toonz Rick & Morty" className="h-48 w-48 rounded-lg" />
+                <StaticImage src="../images/pieces/silver.jpeg" alt="X-Toonz Rick & Morty" className="w-3/4 md:h-48 md:w-48 rounded-lg" />
             </div>
 
         </Section>
@@ -157,11 +173,21 @@ function IndexPage(){
         <div id="team">
             <Section className="flex flex-col items-center pt-10">
                 <h2 className="text-5xl text-white pb-4 font-inter">Team</h2>
-                <p className="text-white italic">Hover to reveal <i className="fa-solid fa-glasses"/></p>
+                <p className="text-white italic hidden lg:block">Hover to reveal <i className="ml-2 fa-solid fa-glasses"/></p>
+                <p className="text-white italic lg:hidden">Tap to reveal <i className="ml-2 fa-solid fa-glasses"/></p>
                 <div className="flex flex-wrap py-8 md:w-1/2 lg:w-4/5">
-                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group">
-                        <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
-                        <StaticImage src="../images/profiles/sam.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
+                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group"  onClick={handleSamReveal}>
+                        <div className="hidden md:block">
+                            <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
+                            <StaticImage src="../images/profiles/sam.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
+                        </div>
+                        <div className="md:hidden">
+                            {
+                                !samRevealed?
+                                <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
+                                <StaticImage src="../images/profiles/sam.jpeg" alt="" className="h-60 w-60 rounded-lg"/>
+                            }
+                        </div>
                         <h4 className="text-3xl">Sam Parsons</h4>
                         <p className="text-xl italic pb-2">CEO/Founder</p>
                         <div className="flex space-x-4 text-3xl">
@@ -173,9 +199,19 @@ function IndexPage(){
                             <li>Worked on finance team for largest deal on record at the time $5.45 billion sale of Stuyvesant Town - Peter Cooper Village to BlackRock</li>
                         </ul>
                     </div>
-                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group">
-                        <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
-                        <StaticImage src="../images/profiles/simon.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
+                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group"  onClick={handleSimonReveal}>
+                        <div className="hidden md:block">
+                            <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
+                            <StaticImage src="../images/profiles/simon.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
+                        </div>
+                        <div className="md:hidden">
+                            {
+                                !simonRevealed?
+                                    <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
+                                    <StaticImage src="../images/profiles/simon.jpeg" alt="" className="h-60 w-60 rounded-lg"/>
+                            }
+                        </div>
+
                         <h4 className="text-3xl">Simon Dunkelman</h4>
                         <p className="text-xl italic pb-2">Product Lead</p>
                         <div className="flex space-x-4 text-3xl">
@@ -187,9 +223,18 @@ function IndexPage(){
                             <li>Previously SaaS founder in Wealth Management</li>
                         </ul>
                     </div>
-                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group">
-                        <StaticImage src="../images/pieces/naruto.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
-                        <StaticImage src="../images/profiles/edril.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
+                    <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group"  onClick={handleEdrilReveal}>
+                        <div className="hidden md:block">
+                            <StaticImage src="../images/pieces/naruto.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
+                            <StaticImage src="../images/profiles/edril.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
+                        </div>
+                        <div className="md:hidden">
+                            {
+                                !edrilRevealed?
+                                    <StaticImage src="../images/pieces/naruto.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
+                                    <StaticImage src="../images/profiles/edril.jpeg" alt="" className="h-60 w-60 rounded-lg"/>
+                            }
+                        </div>
                         <h4 className="text-3xl">Edril Salanza</h4>
                         <p className="text-xl italic pb-2">Lead Artist</p>
                         <div className="flex space-x-4 text-3xl">
