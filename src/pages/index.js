@@ -175,15 +175,15 @@ function IndexPage(){
                 <p className="text-white italic lg:hidden">Tap to reveal <i className="ml-2 fa-solid fa-glasses"/></p>
                 <div className="flex flex-wrap py-8 md:w-1/2 lg:w-4/5">
                     <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group"  onClick={handleSamReveal}>
-                        <div className="hidden md:block">
-                            <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
-                            <StaticImage src="../images/profiles/sam.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
-                        </div>
+                        {/*<div className="hidden md:block">*/}
+                        {/*    <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>*/}
+                        {/*    <StaticImage src="../images/profiles/sam.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>*/}
+                        {/*</div>*/}
                         <div>
                             {
                                 !samRevealed?
-                                <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
-                                <StaticImage src="../images/profiles/sam.jpeg" alt="" className="h-60 w-60 rounded-lg"/>
+                                <StaticImage src="../images/pieces/superman.jpeg" alt="Superman X-Toonz NFT" className="h-60 w-60 rounded-lg"/> :
+                                <StaticImage src="../images/profiles/sam.jpeg" alt="Sam Parsons profile" className="h-60 w-60 rounded-lg"/>
                             }
                         </div>
                         <h4 className="text-3xl">Sam Parsons</h4>
@@ -205,8 +205,8 @@ function IndexPage(){
                         <div>
                             {
                                 !simonRevealed?
-                                    <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
-                                    <StaticImage src="../images/profiles/simon.jpeg" alt="" className="h-60 w-60 rounded-lg"/>
+                                    <StaticImage src="../images/pieces/hulk.jpeg" alt="Hulk X-Toonz NFT" className="h-60 w-60 rounded-lg"/> :
+                                    <StaticImage src="../images/profiles/simon.jpeg" alt="Simon Dunkelman profile" className="h-60 w-60 rounded-lg"/>
                             }
                         </div>
 
@@ -229,8 +229,8 @@ function IndexPage(){
                         <div>
                             {
                                 !edrilRevealed?
-                                    <StaticImage src="../images/pieces/naruto.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
-                                    <StaticImage src="../images/profiles/edril.jpeg" alt="" className="h-60 w-60 rounded-lg"/>
+                                    <StaticImage src="../images/pieces/naruto.jpeg" alt="Naruto X-Toonz NFT" className="h-60 w-60 rounded-lg"/> :
+                                    <StaticImage src="../images/profiles/edril.jpeg" alt="Edril Salanza profile" className="h-60 w-60 rounded-lg"/>
                             }
                         </div>
                         <h4 className="text-3xl">Edril Salanza</h4>
