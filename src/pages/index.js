@@ -14,7 +14,7 @@ import Footer from "../components/Footer";
 const frequentQuestions = [
     {
         'question': 'What is X-Toonz?',
-        'answer': 'X-Toonz are 8,888 NFTs bringing decentralisation together on both the Ethereum & Solana blockchains as well as in real life. Owners of the NFT gain access to our social clubs that include a wellness spa, nightclub as well as facilities for events & conferences. We also have additional benefits for members which you can check out on our roadmap.'
+        'answer': 'X-Toonz are 8,888 NFTs bringing decentralisation together on both the Ethereum & Solana blockchains as well as in real life. Owners of the NFT gain access to our social clubs that include a wellness spa, cigar lounge as well as facilities for events & conferences. We also have additional benefits for members which you can check out on our roadmap.'
     },
     {
         'question': 'Where are the locations?',
@@ -26,11 +26,11 @@ const frequentQuestions = [
     // },
     {
         'question': 'How much?',
-        'answer': 'Whitelist 0.27 & Public Sale 0.8. During the public mint 20 out of 400 Diamond tiers will be randomly minted. The remaining 380 will be sold using a Dutch Auction after public mint has closed.'
+        'answer': 'Whitelist 0.27ETH  & Public Sale 0.8ETH (subject to change closer to mint date). During the public mint 20 out of 400 Diamond tiers will be randomly minted. The remaining 380 will be sold using a Dutch Auction after public mint has closed.'
     },
     {
         'question': 'How to get whitelist?',
-        'answer': "We will be running competitions over on Twitter @XToonzNFT to win whitelist spots. We're also proud to have partnered with WenWL who's members will automatically receive a whitelist spot."
+        'answer': "We will be running competitions over on Twitter @XToonzNFT to win whitelist spots."
     }
 ]
 
@@ -179,7 +179,7 @@ function IndexPage(){
                             <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
                             <StaticImage src="../images/profiles/sam.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
                         </div>
-                        <div className="md:hidden">
+                        <div>
                             {
                                 !samRevealed?
                                 <StaticImage src="../images/pieces/superman.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
@@ -198,11 +198,11 @@ function IndexPage(){
                         </ul>
                     </div>
                     <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group"  onClick={handleSimonReveal}>
-                        <div className="hidden md:block">
-                            <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
-                            <StaticImage src="../images/profiles/simon.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
-                        </div>
-                        <div className="md:hidden">
+                        {/*<div className="hidden md:block">*/}
+                        {/*    <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>*/}
+                        {/*    <StaticImage src="../images/profiles/simon.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>*/}
+                        {/*</div>*/}
+                        <div>
                             {
                                 !simonRevealed?
                                     <StaticImage src="../images/pieces/hulk.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
@@ -222,11 +222,11 @@ function IndexPage(){
                         </ul>
                     </div>
                     <div className="flex flex-col pb-8 lg:pb-0 w-full lg:w-1/3 items-center text-white group"  onClick={handleEdrilReveal}>
-                        <div className="hidden md:block">
-                            <StaticImage src="../images/pieces/naruto.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>
-                            <StaticImage src="../images/profiles/edril.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>
-                        </div>
-                        <div className="md:hidden">
+                        {/*<div className="hidden md:block">*/}
+                        {/*    <StaticImage src="../images/pieces/naruto.jpeg" alt="" className="h-60 w-60 rounded-lg block group-hover:hidden"/>*/}
+                        {/*    <StaticImage src="../images/profiles/edril.jpeg" alt="" className="h-60 w-60 rounded-lg hidden group-hover:block"/>*/}
+                        {/*</div>*/}
+                        <div>
                             {
                                 !edrilRevealed?
                                     <StaticImage src="../images/pieces/naruto.jpeg" alt="" className="h-60 w-60 rounded-lg"/> :
