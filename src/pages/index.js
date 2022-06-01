@@ -68,7 +68,6 @@ function IndexPage(){
                 <div className="flex items-center justify-center -translate-y-[20px]">
                     <img src={NeonSign} alt="Neon sign for X-Toonz club" width="280" className="neon-sign hidden lg:block" />
                 </div>
-                <h2 className="text-2xl text-center text-white font-caslon">Decentralised Together.</h2>
             </div>
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/4 text-white text-3xl">
                 <p className="font-caslon">The luxuries of an exclusive private club.<br/>
@@ -82,7 +81,6 @@ function IndexPage(){
                 <div className="w-full">
                     <StaticImage src="../images/red-circles-with-sign.png" alt="Red circle background" className="object-cover z-0" />
                 </div>
-                <h2 className="text-3xl text-center text-white font-caslon">Decentralisation Together.</h2>
             </div>
             <div className="text-white text-3xl">
                 <p className="font-caslon">The luxuries of an exclusive private club.<br/>
