@@ -129,7 +129,7 @@ function IndexPage(){
     <div id="rarity">
         <Section className="h-full md:h-screen flex flex-col items-center space-y-6 bg-sky-middle-short bg-cover bg-no-repeat text-center py-8">
             <h2 className="text-5xl text-white pb-4 font-inter">Rarity</h2>
-            <p className="text-lg text-white">8,888 unique generated </p>
+            <p className="text-lg text-white">8,888 unique generated from <span className="font-bold">336</span> across <span className="font-bold">7</span> different layers.</p>
             <RarityGrid />
         </Section>
     </div>
