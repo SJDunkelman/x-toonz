@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `X-Toonz`,
-    description: `Insert description`,
+    description: `Decentralised together. X-Toonz is a collection of 8,888 NFTs bringing Web3 IRL.`,
     author: `Simon Dunkelman`,
     siteUrl: `https://www.xtoonz.io`,
   },
@@ -19,6 +19,12 @@ module.exports = {
         "path": "./src/images/"
       },
       __key: "images"
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        "icon": "src/images/favicon.png"
+      },
     },
   ]
 };

@@ -63,8 +63,8 @@ function Seo({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
+      <meta name="icon" href="/images/favicon.png" />
       <script src="https://kit.fontawesome.com/dd8af45878.js" crossOrigin="anonymous" />
-      <script src="circletype.min.js" />
     </Helmet>
   )
 }
