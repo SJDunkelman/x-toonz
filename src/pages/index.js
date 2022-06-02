@@ -14,16 +14,16 @@ import Footer from "../components/Footer";
 const frequentQuestions = [
     {
         'question': 'What is X-Toonz?',
-        'answer': 'X-Toonz are 8,888 NFTs bringing decentralisation together on both the Ethereum & Solana blockchains as well as in real life. Owners of the NFT gain access to our social clubs that include a wellness spa, cigar lounge as well as facilities for events & conferences. We also have additional benefits for members which you can check out on our roadmap.'
+        'answer': 'X-Toonz are 8,888 NFTs bringing decentralization together on both the Ethereum & Solana blockchains as well as in real life. Owners of the NFT gain access to our social clubs that include a wellness spa, cigar lounge as well as facilities for events & conferences. We also have additional benefits for members which you can check out on our roadmap.'
     },
     {
         'question': 'Where are the locations?',
         'answer': 'Our flagship social club location is in the heart of Miami, with perfect proximity to the beach, airport and shopping district. We also have an international location to be announced soon.'
     },
-    // {
-    //     'question': 'Wen mint?',
-    //     'answer': 'Both whitelist & public mint will be in mid-June. Stay tuned on Twitter @XToonzNFT for exact dates.'
-    // },
+    {
+        'question': 'What’s the difference between silver and diamond tier?',
+        'answer': 'Our diamond tier NFTs are not only rarer art but also offer exclusive perks such as premium suites, complementary meals and free shuttles to the airport which is nearby. 20 out of 400 diamond passes will be randomly minted by the public, with the remaining 380 sold via a Dutch auction after the public mint has sold out.'
+    },
     {
         'question': 'How much?',
         'answer': 'Whitelist 0.27ETH  & Public Sale 0.8ETH (subject to change closer to mint date). During the public mint 20 out of 400 Diamond tiers will be randomly minted. The remaining 380 will be sold using a Dutch Auction after public mint has closed.'
@@ -70,8 +70,8 @@ function IndexPage(){
                 </div>
             </div>
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/4 text-white text-3xl">
-                <p className="font-caslon">The luxuries of an exclusive private club.<br/>
-                    The inclusivity of Web3.</p>
+                <p className="font-caslon">The luxuries of an <span className="font-semibold">exclusive</span> private club.<br/>
+                    The inclusivity of <span className="font-semibold ml-1">Web3.</span></p>
             </div>
         </div>
 
@@ -83,8 +83,9 @@ function IndexPage(){
                 </div>
             </div>
             <div className="text-white text-3xl">
-                <p className="font-caslon">The luxuries of an exclusive private club.<br/>
+                <p className="font-caslon">The luxuries of <br/>an exclusive private club.<br/>
                     The inclusivity of Web3.</p>
+
             </div>
         </div>
     </Section>
@@ -100,9 +101,9 @@ function IndexPage(){
                 <StaticImage src="../images/pieces/rick-and-morty.jpeg" alt="X-Toonz Rick & Morty" className="w-3/4 md:h-48 md:w-48 rounded-lg" />
                 <div className="flex flex-col justify-start items-center text-white">
                     <h3 className="text-2xl font-caslon font-semibold">Diamond Tier</h3>
-                    <p className="text-lg">VIP status access to the Social Club with exclusive perks</p>
+                    <p className="text-lg">VIP status access to the Social Club with<br className="lg:hidden"/> exclusive perks</p>
                     <ul className="text-center">
-                        <li>Premium Suites All meals & drinks comped</li>
+                        <li>Premium Suites, all meals & drinks complementary</li>
                         <li>Free Airport Shuttle</li>
                         <li>Eligible to stake $TIME</li>
                     </ul>
@@ -233,7 +234,7 @@ function IndexPage(){
                                     <StaticImage src="../images/profiles/edril.jpeg" alt="Edril Salanza profile" className="h-60 w-60 rounded-lg"/>
                             }
                         </div>
-                        <h4 className="text-3xl">Edril Salanza</h4>
+                        <h4 className="text-3xl">Edril Salazar</h4>
                         <p className="text-xl italic pb-2">Lead Artist</p>
                         <div className="flex space-x-4 text-3xl">
                             <a href="https://twitter.com/Edrilordz" target="_blank"><i className="fa-brands fa-twitter" /></a>
