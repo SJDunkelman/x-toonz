@@ -10,6 +10,7 @@ import {Link} from "gatsby";
 import AnimatedBuilding from "../components/AnimatedBuilding";
 import NeonSign from "../images/neon-sign-animated.gif";
 import Footer from "../components/Footer";
+import Signup from "../components/SignUp";
 
 const frequentQuestions = [
     {
@@ -247,6 +248,7 @@ function IndexPage(){
                 </div>
             </Section>
         </div>
+        <Signup />
         <Footer />
     </div>
     </Layout>
