@@ -1,0 +1,43 @@
+@keyframes strobeflash {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes cloudmove {
+    0% {
+        transform: translate(-100%);
+    }
+    100% {
+        transform: translate(100%);
+    }
+}
+
+.clouds-1 {
+    animation: cloudmove 22s linear infinite;
+}
+
+.clouds-2 {
+    animation: cloudmove 20s linear infinite;
+}
+
+.clouds-3 {
+    animation: cloudmove 18s linear infinite;
+}
+
+.strobe-1 {
+    animation: strobeflash 1s linear infinite;
+}
+
+.strobe-2 {
+    animation-name: strobeflash;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}

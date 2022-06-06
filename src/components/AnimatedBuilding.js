@@ -1,5 +1,6 @@
 import React from "react";
 import {StaticImage} from "gatsby-plugin-image";
+import "../styles/building.css";
 
 export default function AnimatedBuilding(){
     const imageClasses = 'absolute top-0 left-0 bg-no-repeat h-screen overflow-hidden';
