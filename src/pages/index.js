@@ -5,7 +5,7 @@ import Section from "../components/Section";
 import {StaticImage} from "gatsby-plugin-image";
 import FAQAccordion from "../components/FAQAccordion";
 import RarityGrid from "../components/RarityGrid";
-import {Link} from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 
 import AnimatedBuilding from "../components/AnimatedBuilding";
 import NeonSign from "../images/neon-sign-animated.gif";
@@ -16,6 +16,10 @@ const frequentQuestions = [
     {
         'question': 'What is X-Toonz?',
         'answer': 'X-Toonz are 8,888 NFTs bringing decentralization together on both the Ethereum & Solana blockchains as well as in real life. Owners of the NFT gain access to our social clubs that include a wellness spa, cigar lounge as well as facilities for events & conferences. We also have additional benefits for members which you can check out on our roadmap.'
+    },
+    {
+      'question': 'How long will this project take?',
+      'answer': 'Our experienced property development team have estimated the construction of the Miami venue will take up to a year from the time of purchase. During this time, X-Toonz will be building in the digital space and on-boarding existing and future holders.',
     },
     {
         'question': 'Where are the locations?',
@@ -32,10 +36,29 @@ const frequentQuestions = [
     {
         'question': 'How to get whitelist?',
         'answer': "We will be running competitions over on Twitter @XToonzNFT to win whitelist spots."
+    },
+    {
+        'question':'What is the difference in staking Diamond and Silver tiers?',
+        'answer': 'Diamond tier passes when staked will earn our token at an accelerated rate, so that they can enjoy the associated perks much quicker.',
     }
 ]
 
 function IndexPage(){
+  //   const data = useStaticQuery(graphql`
+  //   query {
+  //     file(relativePath: { eq: "images/default.jpg" }) {
+  //       childImageSharp {
+  //         # Specify a fixed image and fragment.
+  //         # The default width is 400 pixels
+  //         fixed {
+  //           ...GatsbyImageSharpFixed
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
+
     const[samRevealed, setSamReveal] = useState(false);
     const[simonRevealed, setSimonReveal] = useState(false);
     const[edrilRevealed, setEdrilReveal] = useState(false);
@@ -106,7 +129,7 @@ function IndexPage(){
                     <ul className="text-center">
                         <li>Premium Suites, all meals & drinks complementary</li>
                         <li>Free Airport Shuttle</li>
-                        <li>Eligible to stake $TIME</li>
+                        <li>Accelerated earning of $TOONZ when staked</li>
                     </ul>
                 </div>
             </div>
@@ -122,7 +145,6 @@ function IndexPage(){
                 </div>
                 <StaticImage src="../images/pieces/silver.jpeg" alt="X-Toonz Rick & Morty" className="w-3/4 md:h-48 md:w-48 rounded-lg" />
             </div>
-
         </Section>
         <div className="h-20 bg-gradient-to-b from-[#1c49a6] to-[#163583]" />
     </div>
