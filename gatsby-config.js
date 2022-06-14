@@ -18,7 +18,13 @@ module.exports = {
         "name": "images",
         "path": "./src/images/"
       },
-      __key: "images"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "data",
+        "path": "./src/data/"
+      },
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -26,5 +32,6 @@ module.exports = {
         "icon": "src/images/favicon.png"
       },
     },
+    `gatsby-transformer-csv`,
   ]
 };
